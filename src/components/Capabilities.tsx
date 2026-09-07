@@ -10,9 +10,9 @@ export default function Capabilities() {
   const shift = useParallaxRange(scrollYProgress, 40, -30);
 
   return (
-    <section id="about" ref={ref} style={{ background: "var(--bg)", padding: "112px 0" }}>
+    <section id="about" ref={ref} className="capabilities-section">
       <div className="section-wrap grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
-        <motion.div style={{ y: shift }}>
+        <motion.div className="capabilities-intro" style={{ y: shift }}>
           <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--primary)" }}>
             Studio
           </p>

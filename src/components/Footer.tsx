@@ -1,7 +1,7 @@
 import { IconInstagram, IconLinkedIn, IconX } from "@/components/icons";
 import { company, footerCompany, footerServices } from "@/data/site";
 
-export default function Footer() {
+export default function Footer({ home = true }: { home?: boolean }) {
   return (
     <footer style={{ background: "var(--footer-bg)", padding: "56px 24px 32px" }}>
       <div style={{ maxWidth: 1120, margin: "0 auto" }}>
@@ -41,7 +41,7 @@ export default function Footer() {
               Yang kami bangun
             </p>
             {footerServices.map((l) => (
-              <a key={l.label} href={`#${l.id}`} className="footer-link block text-sm mb-2">
+              <a key={l.label} href={home ? `#${l.id}` : `/#${l.id}`} className="footer-link block text-sm mb-2">
                 {l.label}
               </a>
             ))}
@@ -51,7 +51,7 @@ export default function Footer() {
               Studio
             </p>
             {footerCompany.map((l) => (
-              <a key={l.label} href={l.href ?? `#${l.id}`} className="footer-link block text-sm mb-2">
+              <a key={l.label} href={l.href ?? (home ? `#${l.id}` : `/#${l.id}`)} className="footer-link block text-sm mb-2">
                 {l.label}
               </a>
             ))}

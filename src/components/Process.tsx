@@ -10,8 +10,8 @@ export default function Process() {
   const titleY = useParallaxRange(scrollYProgress, 20, -20);
 
   return (
-    <section id="process" ref={ref} style={{ background: "var(--bg)", padding: "112px 0" }}>
-      <div className="section-wrap grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
+    <section id="process" ref={ref} className="process-section">
+      <div className="section-wrap process-layout">
         <motion.div className="process-sticky" style={{ y: titleY }}>
           <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--primary)" }}>
             Cara kerja
@@ -24,11 +24,11 @@ export default function Process() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col gap-5">
+        <div className="process-list">
           {process.map((step, i) => (
             <motion.article
               key={step.step}
-              className="rounded-2xl p-7"
+              className="process-card"
               style={{ background: "var(--bg-alt)", border: "1px solid var(--border)" }}
               initial={reduce ? false : { opacity: 0, x: 28 }}
               whileInView={{ opacity: 1, x: 0 }}

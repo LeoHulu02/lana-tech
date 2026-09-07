@@ -1,159 +1,249 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { company } from "@/data/site";
-import { useHeroScroll } from "@/hooks/useScrollLayers";
+import { motion } from "framer-motion"
+import { IconShield } from "@/components/icons"
+import { company } from "@/data/site"
+import { useHeroScroll } from "@/hooks/useScrollLayers"
 
-function DashFrame() {
+const activity = [
+  { name: "Pesanan #LN-2841", meta: "Jakarta Selatan", value: "+ Rp8,4 jt" },
+  { name: "Stok diperbarui", meta: "Gudang Utama", value: "128 SKU" },
+  { name: "Invoice dibayar", meta: "Nexora Bandung", value: "+ Rp3,2 jt" },
+]
+
+function DashboardVisual() {
   return (
-    <div className="product-frame rounded-2xl w-full max-w-[420px]">
-      <div className="product-bar">
-        <span className="product-dot" style={{ background: "#FF5F57" }} />
-        <span className="product-dot" style={{ background: "#FEBC2E" }} />
-        <span className="product-dot" style={{ background: "#28C840" }} />
-        <span className="text-xs ml-2" style={{ color: "var(--fg-muted)" }}>
-          Kontrol operasional
-        </span>
+    <div
+      className="hero-dashboard"
+      role="img"
+      aria-label="Contoh dashboard operasional yang dibuat Lana Tech"
+    >
+      <div className="hero-dashboard-bar">
+        <div className="hero-dashboard-brand">
+          <span className="hero-dashboard-logo">L</span>
+          <span>Lana Ops</span>
+        </div>
+        <div className="hero-dashboard-actions">
+          <span className="hero-dashboard-search">Cari data...</span>
+          <span className="hero-dashboard-avatar">NA</span>
+        </div>
       </div>
-      <div className="p-4 grid grid-cols-3 gap-2">
-        {["Stok live", "Order hari ini", "Margin"].map((label, i) => (
-          <div key={label} className="rounded-xl p-3" style={{ background: "var(--bg-alt)", border: "1px solid var(--border)" }}>
-            <div className="text-[10px] mb-1" style={{ color: "var(--fg-muted)" }}>
-              {label}
-            </div>
-            <div className="text-sm font-bold" style={{ color: i === 0 ? "var(--primary)" : "var(--fg)" }}>
-              {["1.284", "76", "18%"][i]}
-            </div>
+
+      <div className="hero-dashboard-body">
+        <aside className="hero-dashboard-sidebar" aria-hidden="true">
+          {["Overview", "Pesanan", "Inventory", "Pelanggan", "Laporan"].map(
+            (item, index) => (
+              <span
+                key={item}
+                className={`hero-dashboard-nav${
+                  index === 0 ? " is-current" : ""
+                }`}
+              >
+                <i />
+                {item}
+              </span>
+            ),
+          )}
+          <div className="hero-sidebar-help">
+            <span>Butuh bantuan?</span>
+            <strong>Hubungi support</strong>
           </div>
-        ))}
-        <div className="col-span-3 rounded-xl p-3 h-24" style={{ background: "var(--bg-alt)", border: "1px solid var(--border)" }}>
-          <div className="flex items-end gap-1 h-full">
-            {[40, 62, 48, 80, 55, 90, 70].map((h, i) => (
-              <div key={i} className="flex-1 rounded-sm" style={{ height: `${h}%`, background: i === 5 ? "var(--primary)" : "var(--border)" }} />
+        </aside>
+
+        <div className="hero-dashboard-main">
+          <div className="hero-dashboard-heading">
+            <div>
+              <span className="hero-dashboard-kicker">Senin, 8 September</span>
+              <strong>Selamat pagi, Nara.</strong>
+            </div>
+            <span className="hero-dashboard-download">Unduh laporan</span>
+          </div>
+
+          <div className="hero-metrics">
+            {[
+              ["Pendapatan", "Rp84,2 jt", "+18.4%"],
+              ["Pesanan aktif", "284", "+12 hari ini"],
+              ["Stok tersedia", "1.284", "98% sehat"],
+            ].map(([label, value, trend]) => (
+              <div className="hero-metric" key={label}>
+                <span>{label}</span>
+                <strong>{value}</strong>
+                <small>{trend}</small>
+              </div>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
-function MobileFrame() {
-  return (
-    <div className="product-frame rounded-[22px] w-[148px]">
-      <div className="px-4 pt-3 pb-2 text-center">
-        <div className="w-10 h-1 rounded-full mx-auto mb-3" style={{ background: "var(--border)" }} />
-        <div className="text-[10px] font-semibold" style={{ color: "var(--fg-muted)" }}>
-          Reservasi
-        </div>
-        <div className="text-sm font-bold mt-1" style={{ color: "var(--fg)" }}>
-          Meja 12 · 19.30
-        </div>
-      </div>
-      <div className="px-3 pb-4 flex flex-col gap-2">
-        {["Aruna · 4 orang", "Vela · 2 orang", "Walk-in"].map((row) => (
-          <div key={row} className="rounded-lg px-2 py-2 text-[10px] font-medium" style={{ background: "var(--bg-alt)", color: "var(--fg)" }}>
-            {row}
+          <div className="hero-dashboard-grid">
+            <div className="hero-chart-card">
+              <div className="hero-card-heading">
+                <div>
+                  <span>Performa penjualan</span>
+                  <strong>Rp428,6 jt</strong>
+                </div>
+                <small>30 hari</small>
+              </div>
+              <div className="hero-chart" aria-hidden="true">
+                <span className="hero-chart-grid grid-one" />
+                <span className="hero-chart-grid grid-two" />
+                <span className="hero-chart-grid grid-three" />
+                <svg viewBox="0 0 430 150" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient
+                      id="heroChartFill"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="1"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="currentColor"
+                        stopOpacity="0.22"
+                      />
+                      <stop
+                        offset="100%"
+                        stopColor="currentColor"
+                        stopOpacity="0"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    className="hero-chart-area"
+                    d="M0,130 C40,120 62,94 102,101 C145,109 160,62 205,74 C250,86 268,31 310,48 C350,64 382,17 430,22 L430,150 L0,150 Z"
+                  />
+                  <path
+                    className="hero-chart-line"
+                    d="M0,130 C40,120 62,94 102,101 C145,109 160,62 205,74 C250,86 268,31 310,48 C350,64 382,17 430,22"
+                  />
+                  <circle cx="310" cy="48" r="4" className="hero-chart-point" />
+                </svg>
+              </div>
+              <div className="hero-chart-labels">
+                <span>10 Agu</span>
+                <span>20 Agu</span>
+                <span>30 Agu</span>
+                <span>8 Sep</span>
+              </div>
+            </div>
+
+            <div className="hero-activity-card">
+              <div className="hero-card-heading">
+                <span>Aktivitas terbaru</span>
+                <small>Live</small>
+              </div>
+              <div className="hero-activity-list">
+                {activity.map((item, index) => (
+                  <div className="hero-activity-row" key={item.name}>
+                    <span className={`hero-activity-icon icon-${index + 1}`} />
+                    <div>
+                      <strong>{item.name}</strong>
+                      <small>{item.meta}</small>
+                    </div>
+                    <em>{item.value}</em>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-        <div className="rounded-lg px-2 py-2 text-[10px] font-bold text-center" style={{ background: "var(--primary)", color: "#fff" }}>
-          Konfirmasi
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-function PanelFrame() {
+function MobileCompanion() {
   return (
-    <div className="product-frame rounded-2xl w-[220px] p-4">
-      <div className="text-[10px] font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--fg-muted)" }}>
-        Pipeline
+    <div className="hero-mobile-card" aria-hidden="true">
+      <div className="hero-mobile-handle" />
+      <div className="hero-mobile-label">
+        <span>Saldo tersedia</span>
+        <i>•••</i>
       </div>
-      <div className="text-lg font-extrabold mb-3" style={{ color: "var(--fg)" }}>
-        12 project aktif
+      <strong>Rp24.840.000</strong>
+      <div className="hero-mobile-progress">
+        <span />
       </div>
-      {["Desain", "Development", "QA"].map((s, i) => (
-        <div key={s} className="flex items-center justify-between text-xs mb-2">
-          <span style={{ color: "var(--fg-muted)" }}>{s}</span>
-          <span className="font-semibold" style={{ color: "var(--fg)" }}>
-            {["3", "7", "2"][i]}
-          </span>
-        </div>
-      ))}
+      <div className="hero-mobile-meta">
+        <span>Target bulanan</span>
+        <strong>78%</strong>
+      </div>
     </div>
-  );
+  )
 }
 
 export default function Hero() {
-  const { ref, bgY, glowY, uiY, uiYSlow, copyY, fade } = useHeroScroll();
+  const { ref, backdropY, dashboardY, phoneY, copyY, orbitRotate, fade } =
+    useHeroScroll()
 
   return (
-    <section ref={ref} className="relative overflow-hidden" style={{ background: "var(--hero-bg)", padding: "72px 0 48px" }}>
-      <motion.div className="hero-grid" style={{ y: bgY }} />
+    <section ref={ref} className="hero-premium">
+      <motion.div className="hero-ambient" style={{ y: backdropY }} />
       <motion.div
-        aria-hidden
-        className="absolute rounded-full pointer-events-none"
-        style={{
-          y: glowY,
-          top: -80,
-          right: -40,
-          width: 420,
-          height: 420,
-          background: "color-mix(in srgb, var(--primary) 16%, transparent)",
-          filter: "blur(70px)",
-        }}
+        className="hero-orbit hero-orbit-one"
+        aria-hidden="true"
+        style={{ rotate: orbitRotate }}
       />
       <motion.div
-        aria-hidden
-        className="absolute rounded-full pointer-events-none"
-        style={{
-          y: bgY,
-          bottom: 40,
-          left: -80,
-          width: 280,
-          height: 280,
-          background: "color-mix(in srgb, #7C3AED 12%, transparent)",
-          filter: "blur(70px)",
-        }}
+        className="hero-orbit hero-orbit-two"
+        aria-hidden="true"
+        style={{ rotate: orbitRotate }}
       />
 
-      <div className="section-wrap relative grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
-        <motion.div style={{ y: copyY, opacity: fade }}>
-          <p className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-6" style={{ background: "var(--pill)", color: "var(--primary)", border: "1px solid var(--pill-border)" }}>
-            Studio product engineering · {company.city}
+      <div className="section-wrap hero-premium-layout">
+        <motion.div
+          className="hero-premium-copy"
+          style={{ y: copyY, opacity: fade }}
+        >
+          <p className="hero-eyebrow">
+            <span />
+            Product engineering studio · {company.city}
           </p>
-          <h1 className="mb-6" style={{ fontSize: "clamp(2.4rem, 5.4vw, 4.4rem)", fontWeight: 800, letterSpacing: "-0.05em", lineHeight: 1.05, color: "var(--fg)" }}>
-            {company.tagline}
+          <h1 className="hero-premium-title">
+            Produk digital yang
+            <span> siap bekerja.</span>
           </h1>
-          <p className="mb-8" style={{ fontSize: "1.12rem", lineHeight: 1.75, color: "var(--fg-muted)", maxWidth: 520 }}>
-            Lana Tech merancang dan mengembangkan website, aplikasi web, dan sistem yang dipakai tim setiap hari. Satu studio, dari brief sampai produk live.
+          <p className="hero-premium-lead">
+            Kami merancang dan membangun website, aplikasi web, dan sistem
+            operasional yang dipakai tim sungguhan—dari brief sampai live.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <a href="#portfolio" className="btn-primary text-sm font-semibold px-7 py-3.5">
+          <div className="hero-premium-actions">
+            <a href="#portfolio" className="btn-primary hero-cta">
               Lihat karya
+              <span aria-hidden="true">↗</span>
             </a>
-            <a href="#contact" className="btn-ghost text-sm font-semibold px-7 py-3.5">
-              Mulai project
+            <a href="#contact" className="btn-ghost hero-cta">
+              Diskusikan project
             </a>
           </div>
-          <div className="mt-10 sm:hidden">
-            <DashFrame />
+          <div className="hero-trust">
+            <span>
+              <IconShield size={16} />
+              Source code milik klien
+            </span>
+            <span>
+              <i />
+              30 hari pendampingan
+            </span>
           </div>
         </motion.div>
 
-        <div className="relative h-[420px] md:h-[480px] hidden sm:block">
-          <motion.div className="absolute left-0 top-8 z-20" style={{ y: uiY }}>
-            <DashFrame />
+        <div className="hero-visual-stage">
+          <motion.div
+            className="hero-dashboard-layer"
+            style={{ y: dashboardY }}
+          >
+            <DashboardVisual />
           </motion.div>
-          <motion.div className="absolute right-0 top-0 z-30" style={{ y: uiYSlow }}>
-            <MobileFrame />
+          <motion.div className="hero-mobile-layer" style={{ y: phoneY }}>
+            <MobileCompanion />
           </motion.div>
-          <motion.div className="absolute right-8 bottom-4 z-10" style={{ y: uiY }}>
-            <PanelFrame />
+          <motion.div className="hero-live-badge" style={{ y: phoneY }}>
+            <span />
+            System operational
+            <strong>99.9%</strong>
           </motion.div>
         </div>
       </div>
     </section>
-  );
+  )
 }

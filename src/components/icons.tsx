@@ -255,3 +255,11 @@ export function IconWhatsApp(props: IconProps) {
     </Svg>
   );
 }
+
+export function IconChevronDown(props: IconProps) {
+  return (
+    <Svg {...props} size={props.size ?? 18}>
+      <path d="M6 9l6 6 6-6" />
+    </Svg>
+  );
+}
