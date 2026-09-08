@@ -1,33 +1,42 @@
 "use client"
 
-import { clients, stack, stats } from "@/data/site"
+import { clients, stack } from "@/data/site"
+
+import { useSiteMessages } from "@/hooks/useSiteMessages"
 
 export default function Proof() {
+  const copy = useSiteMessages().proof
+
   return (
     <section
       style={{
         background: "var(--bg-alt)",
+
         borderTop: "1px solid var(--border)",
+
         borderBottom: "1px solid var(--border)",
+
         padding: "40px 0",
       }}
     >
       <div className="section-wrap">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          {stats.map((s) => (
-            <div key={s.label}>
+          {copy.stats.map(([value, label]) => (
+            <div key={label}>
               <div
                 className="font-extrabold"
                 style={{
                   fontSize: "1.8rem",
+
                   color: "var(--fg)",
+
                   letterSpacing: "-0.04em",
                 }}
               >
-                {s.value}
+                {value}
               </div>
               <div className="text-sm" style={{ color: "var(--fg-muted)" }}>
-                {s.label}
+                {label}
               </div>
             </div>
           ))}
@@ -36,7 +45,7 @@ export default function Proof() {
           className="text-xs font-semibold uppercase tracking-widest mb-4"
           style={{ color: "var(--fg-muted)" }}
         >
-          Dipakai tim operasional di
+          {copy.usedBy}
         </p>
         <div className="logo-marquee mb-8">
           <div className="logo-track">
@@ -46,7 +55,9 @@ export default function Proof() {
                 className="font-extrabold text-xl whitespace-nowrap"
                 style={{
                   color: "var(--fg)",
+
                   opacity: 0.42,
+
                   letterSpacing: "-0.03em",
                 }}
               >
@@ -60,7 +71,9 @@ export default function Proof() {
                 className="font-extrabold text-xl whitespace-nowrap"
                 style={{
                   color: "var(--fg)",
+
                   opacity: 0.42,
+
                   letterSpacing: "-0.03em",
                 }}
               >
@@ -76,7 +89,9 @@ export default function Proof() {
               className="text-xs font-semibold px-3 py-1.5 rounded-lg"
               style={{
                 background: "var(--bg-card)",
+
                 border: "1px solid var(--border)",
+
                 color: "var(--fg)",
               }}
             >

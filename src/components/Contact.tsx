@@ -1,20 +1,33 @@
 "use client"
 
 import { useState, type FormEvent } from "react"
+
+import { useTranslations } from "next-intl"
+
 import { IconMail, IconPhone, IconPin, IconWhatsApp } from "@/components/icons"
+
 import { company } from "@/data/site"
 
 export default function Contact() {
+  const t = useTranslations("contact")
+
+  const common = useTranslations("common")
+
   const [form, setForm] = useState({ name: "", email: "", message: "" })
+
   const [sent, setSent] = useState(false)
 
   const submit = (e: FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Project baru dari ${form.name}`)
+
+    const subject = encodeURIComponent(t("mailSubject", { name: form.name }))
+
     const body = encodeURIComponent(
-      `Nama: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
+      `${t("mailName")}: ${form.name}\n${t("email")}: ${form.email}\n\n${form.message}`,
     )
+
     window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`
+
     setSent(true)
   }
 
@@ -28,6 +41,7 @@ export default function Contact() {
           className="rounded-3xl overflow-hidden p-8 md:p-12 grid lg:grid-cols-2 gap-12 items-start"
           style={{
             background: "var(--bg-alt)",
+
             border: "1px solid var(--border)",
           }}
         >
@@ -36,27 +50,29 @@ export default function Contact() {
               className="text-xs font-semibold uppercase tracking-widest mb-4"
               style={{ color: "var(--primary)" }}
             >
-              Mulai project
+              {t("eyebrow")}
             </p>
             <h2
               className="mb-4"
               style={{
                 fontSize: "clamp(1.9rem, 3.4vw, 2.8rem)",
+
                 fontWeight: 800,
+
                 letterSpacing: "-0.04em",
+
                 lineHeight: 1.15,
+
                 color: "var(--fg)",
               }}
             >
-              Ceritakan yang hendak dibangun. Kami balas dengan rencana, bukan
-              proposal kosong.
+              {t("title")}
             </h2>
             <p
               className="mb-8"
               style={{ color: "var(--fg-muted)", lineHeight: 1.75 }}
             >
-              Konsultasi pertama gratis. Kirim konteksnya — website, aplikasi,
-              atau sistem internal — kami jawab dalam 1 hari kerja.
+              {t("lead")}
             </p>
             <div className="flex flex-col gap-3">
               <a
@@ -77,7 +93,7 @@ export default function Contact() {
                 className="flex items-center gap-2 text-sm"
                 style={{ color: "var(--fg-muted)" }}
               >
-                <IconPin size={16} /> {company.city}
+                <IconPin size={16} /> {common("location")}
               </div>
             </div>
           </div>
@@ -88,18 +104,18 @@ export default function Contact() {
                 className="rounded-2xl p-8 text-center"
                 style={{
                   background: "var(--bg-card)",
+
                   border: "1px solid var(--border)",
                 }}
               >
                 <p className="font-bold mb-2" style={{ color: "var(--fg)" }}>
-                  Terima kasih, {form.name}.
+                  {t("thanks", { name: form.name })}
                 </p>
                 <p
                   className="text-sm mb-5"
                   style={{ color: "var(--fg-muted)" }}
                 >
-                  Email sudah disiapkan. Jika tidak terbuka, lanjut lewat
-                  WhatsApp.
+                  {t("emailReady")}
                 </p>
                 <a
                   href={company.whatsapp}
@@ -115,7 +131,7 @@ export default function Contact() {
                   className="block text-xs font-semibold mb-2"
                   style={{ color: "var(--fg-muted)" }}
                 >
-                  Nama
+                  {t("name")}
                 </label>
                 <input
                   id="contact-name"
@@ -123,7 +139,7 @@ export default function Contact() {
                   required
                   autoComplete="name"
                   className="contact-field mb-4"
-                  placeholder="Nama kamu atau perusahaan"
+                  placeholder={t("namePlaceholder")}
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                 />
@@ -132,7 +148,7 @@ export default function Contact() {
                   className="block text-xs font-semibold mb-2"
                   style={{ color: "var(--fg-muted)" }}
                 >
-                  Email
+                  {t("email")}
                 </label>
                 <input
                   id="contact-email"
@@ -141,7 +157,7 @@ export default function Contact() {
                   type="email"
                   autoComplete="email"
                   className="contact-field mb-4"
-                  placeholder="email@perusahaan.com"
+                  placeholder={t("emailPlaceholder")}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
@@ -150,7 +166,7 @@ export default function Contact() {
                   className="block text-xs font-semibold mb-2"
                   style={{ color: "var(--fg-muted)" }}
                 >
-                  Yang ingin dibangun
+                  {t("message")}
                 </label>
                 <textarea
                   id="contact-message"
@@ -158,7 +174,7 @@ export default function Contact() {
                   required
                   rows={4}
                   className="contact-field mb-5 resize-none"
-                  placeholder="Website, dashboard, toko online, sistem booking..."
+                  placeholder={t("messagePlaceholder")}
                   value={form.message}
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
@@ -169,7 +185,7 @@ export default function Contact() {
                     type="submit"
                     className="btn-primary text-sm font-semibold px-6 py-3"
                   >
-                    Kirim brief
+                    {t("send")}
                   </button>
                   <a
                     href={company.whatsapp}

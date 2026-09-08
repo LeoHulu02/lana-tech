@@ -2,11 +2,13 @@ import Script from "next/script"
 
 function getGaId() {
   const id = process.env.NEXT_PUBLIC_GA_ID?.trim()
+
   return id && /^G-[A-Z0-9]+$/i.test(id) ? id : ""
 }
 
 export default function Analytics() {
   const gaId = getGaId()
+
   if (!gaId) return null
 
   return (

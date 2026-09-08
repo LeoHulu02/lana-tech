@@ -1,15 +1,26 @@
 import Image from "next/image"
-import Link from "next/link"
-import { company, type WorkItem } from "@/data/site"
+
+import { useLocale, useTranslations } from "next-intl"
+
+import type { WorkItem } from "@/data/site"
+
+import { Link } from "@/i18n/navigation"
+
 import { imageBlur } from "@/lib/image"
 
 export default function WorkDetail({
   item,
+
   others,
 }: {
   item: WorkItem
+
   others: WorkItem[]
 }) {
+  const t = useTranslations()
+
+  const root = useLocale() === "en" ? "/en/" : "/"
+
   return (
     <main id="main">
       <section style={{ background: "var(--bg)" }}>
@@ -34,13 +45,13 @@ export default function WorkDetail({
         </div>
         <div className="section-wrap" style={{ paddingBottom: 80 }}>
           <p className="text-xs font-semibold mb-4">
-            <Link
-              href="/#portfolio"
+            <a
+              href={`${root}#portfolio`}
               className="no-underline"
               style={{ color: "var(--primary)" }}
             >
-              ← Semua karya
-            </Link>
+              {t("workDetail.allWork")}
+            </a>
           </p>
           <div className="flex flex-wrap gap-2 mb-4">
             <span
@@ -53,7 +64,9 @@ export default function WorkDetail({
               className="text-xs font-medium px-2.5 py-1 rounded-full"
               style={{
                 background: "var(--bg-alt)",
+
                 color: "var(--fg-muted)",
+
                 border: "1px solid var(--border)",
               }}
             >
@@ -70,9 +83,13 @@ export default function WorkDetail({
             className="mb-4"
             style={{
               fontSize: "clamp(2rem, 4vw, 3.2rem)",
+
               fontWeight: 800,
+
               letterSpacing: "-0.04em",
+
               lineHeight: 1.1,
+
               color: "var(--fg)",
             }}
           >
@@ -82,8 +99,11 @@ export default function WorkDetail({
             className="mb-10"
             style={{
               fontSize: "1.15rem",
+
               lineHeight: 1.7,
+
               color: "var(--fg-muted)",
+
               maxWidth: 640,
             }}
           >
@@ -92,15 +112,18 @@ export default function WorkDetail({
 
           <div className="grid md:grid-cols-3 gap-4 mb-12">
             {[
-              ["Masalah", item.challenge],
-              ["Yang dibangun", item.solution],
-              ["Hasil", item.result],
+              [t("work.problem"), item.challenge],
+
+              [t("work.built"), item.solution],
+
+              [t("work.result"), item.result],
             ].map(([label, text]) => (
               <div
                 key={label}
                 className="rounded-2xl p-5"
                 style={{
                   background: "var(--bg-alt)",
+
                   border: "1px solid var(--border)",
                 }}
               >
@@ -126,7 +149,7 @@ export default function WorkDetail({
                 className="font-bold text-xl mb-4"
                 style={{ color: "var(--fg)" }}
               >
-                Cerita project
+                {t("workDetail.story")}
               </h2>
               <p
                 className="leading-relaxed"
@@ -140,7 +163,7 @@ export default function WorkDetail({
                 className="font-bold text-xl mb-4"
                 style={{ color: "var(--fg)" }}
               >
-                Yang kami kerjakan
+                {t("workDetail.scope")}
               </h2>
               <ul className="flex flex-col gap-2 mb-6">
                 {item.scope.map((s) => (
@@ -160,7 +183,9 @@ export default function WorkDetail({
                     className="text-xs font-medium px-2.5 py-1 rounded-lg"
                     style={{
                       background: "var(--bg-alt)",
+
                       border: "1px solid var(--border)",
+
                       color: "var(--fg)",
                     }}
                   >
@@ -197,24 +222,24 @@ export default function WorkDetail({
             className="rounded-2xl p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-14"
             style={{
               background: "var(--bg-alt)",
+
               border: "1px solid var(--border)",
             }}
           >
             <div>
               <p className="font-bold mb-1" style={{ color: "var(--fg)" }}>
-                Punya masalah operasional yang mirip?
+                {t("workDetail.ctaTitle")}
               </p>
               <p className="text-sm" style={{ color: "var(--fg-muted)" }}>
-                Ceritakan ke {company.name}. Kami balas dengan rencana, bukan
-                slide kosong.
+                {t("workDetail.ctaCopy")}
               </p>
             </div>
-            <Link
-              href="/#contact"
+            <a
+              href={`${root}#contact`}
               className="btn-primary text-sm font-semibold px-6 py-3 text-center"
             >
-              Mulai project
-            </Link>
+              {t("workDetail.start")}
+            </a>
           </div>
 
           {others.length > 0 && (
@@ -223,13 +248,16 @@ export default function WorkDetail({
                 className="font-bold text-lg mb-5"
                 style={{ color: "var(--fg)" }}
               >
-                Karya lain
+                {t("workDetail.other")}
               </h2>
               <div className="grid md:grid-cols-3 gap-4">
                 {others.map((other) => (
                   <Link
                     key={other.slug}
-                    href={`/karya/${other.slug}`}
+                    href={{
+                      pathname: "/karya/[slug]",
+                      params: { slug: other.slug },
+                    }}
                     className="portfolio-card rounded-2xl overflow-hidden no-underline block"
                   >
                     <div className="relative h-36">

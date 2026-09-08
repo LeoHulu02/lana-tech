@@ -1,54 +1,79 @@
-import { company, faqs, siteDescription } from "@/data/site"
+import { company, type Messages } from "@/data/site"
+
+import type { Locale } from "@/i18n/routing"
+
 import { getSiteUrl } from "@/lib/site"
 
-export function organizationJsonLd() {
+export function organizationJsonLd(messages: Messages) {
   const url = getSiteUrl()
+
   return {
     "@context": "https://schema.org",
+
     "@type": "Organization",
+
     name: company.name,
+
     url,
+
     email: company.email,
+
     telephone: company.phone,
+
     foundingDate: String(company.founded),
-    description: siteDescription,
+
+    description: messages.metadata.description,
+
     logo: `${url}/icon.svg`,
+
     address: {
       "@type": "PostalAddress",
+
       addressLocality: company.city,
+
       addressCountry: "ID",
     },
   }
 }
 
-export function websiteJsonLd() {
-  const url = getSiteUrl()
+export function websiteJsonLd(messages: Messages, locale: Locale) {
+  const url = `${getSiteUrl()}${locale === "en" ? "/en" : ""}`
+
   return {
     "@context": "https://schema.org",
+
     "@type": "WebSite",
+
     name: company.name,
+
     url,
-    description: siteDescription,
-    inLanguage: "id-ID",
+
+    description: messages.metadata.description,
+
+    inLanguage: locale === "id" ? "id-ID" : "en-US",
+
     publisher: {
       "@type": "Organization",
       name: company.name,
-      url,
+      url: getSiteUrl(),
     },
   }
 }
 
-export function faqJsonLd() {
+export function faqJsonLd(messages: Messages, locale: Locale) {
   return {
     "@context": "https://schema.org",
+
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+
+    inLanguage: locale === "id" ? "id-ID" : "en-US",
+
+    mainEntity: messages.faq.items.map(([question, answer]) => ({
       "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
+
+      name: question,
+
+      acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   }
 }

@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "title": "Lana Tech — Digital product studio, Jakarta",
+    "description": "Lana Tech designs and develops websites, web applications, and operational systems that teams rely on every day.",
+    "socialDescription": "Websites, web applications, and custom systems — from brief to live product.",
+    "keywords": "Lana Tech, digital product studio, web development Jakarta, custom web applications, operational systems, Next.js",
+    "ogTitle": "Digital products built to work.",
+    "ogSubtitle": "Websites, web applications, and operational systems — from brief to launch.",
+    "ogFooter": "Product engineering studio · South Jakarta"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "productStudio": "Product studio",
+    "homeLabel": "Lana Tech home",
+    "location": "South Jakarta"
+  },
+  "nav": {
+    "aria": "Main navigation",
+    "about": "Studio",
+    "portfolio": "Work",
+    "process": "Process",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "consultation": "Consultation",
+    "darkMode": "Enable dark mode",
+    "lightMode": "Enable light mode",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Change language"
+  },
+  "hero": {
+    "eyebrow": "Product engineering studio · South Jakarta",
+    "title": "Digital products",
+    "titleAccent": " built to work.",
+    "lead": "We design and build websites, web applications, and operational systems used by real teams—from the first brief to launch.",
+    "viewWork": "View our work",
+    "discuss": "Discuss your project",
+    "ownership": "You own the source code",
+    "support": "30 days of post-launch support",
+    "dashboardAria": "An example operational dashboard built by Lana Tech",
+    "search": "Search data...",
+    "sidebar": ["Overview", "Orders", "Inventory", "Customers", "Reports"],
+    "needHelp": "Need help?",
+    "contactSupport": "Contact support",
+    "date": "Monday, September 8",
+    "greeting": "Good morning, Nara.",
+    "download": "Download report",
+    "metrics": [
+      ["Revenue", "IDR 84.2m", "+18.4%"],
+      ["Active orders", "284", "+12 today"],
+      ["Available stock", "1,284", "98% healthy"]
+    ],
+    "salesPerformance": "Sales performance",
+    "salesTotal": "IDR 428.6m",
+    "days": "30 days",
+    "chartLabels": ["Aug 10", "Aug 20", "Aug 30", "Sep 8"],
+    "latestActivity": "Latest activity",
+    "live": "Live",
+    "activity": [
+      ["Order #LN-2841", "South Jakarta", "+ IDR 8.4m"],
+      ["Stock updated", "Main Warehouse", "128 SKUs"],
+      ["Invoice paid", "Nexora Bandung", "+ IDR 3.2m"]
+    ],
+    "availableBalance": "Available balance",
+    "balance": "IDR 24,840,000",
+    "monthlyTarget": "Monthly target",
+    "operationalSystem": "Operational system"
+  },
+  "proof": {
+    "stats": [
+      ["40+", "Digital products live"],
+      ["18", "Active clients"],
+      ["4 yrs", "Building in Jakarta"],
+      ["30 days", "Post-launch support"]
+    ],
+    "usedBy": "Trusted by operations teams at"
+  },
+  "capabilities": {
+    "eyebrow": "Studio",
+    "title": "We build products your team can use tomorrow morning.",
+    "intro1": "Lana Tech is a South Jakarta studio founded in 2022. We stay focused: websites, web applications, and operational systems, delivered all the way to production.",
+    "intro2": "Need a straightforward brochure site? We build those. Need a dashboard, booking platform, or payment-enabled store? That is our day-to-day work.",
+    "items": [
+      {
+        "id": "web",
+        "title": "Websites that work for your business",
+        "desc": "More than a polished page. We create fast, clear websites built to capture leads—from company profiles and campaign landing pages to content portals.",
+        "points": ["Company profiles & campaigns", "Performance and technical SEO", "Mobile-ready from day one"]
+      },
+      {
+        "id": "app",
+        "title": "Web applications & dashboards",
+        "desc": "When spreadsheets can no longer support your operations, we build the system: admin panels, approval flows, real-time reporting, and role-based access.",
+        "points": ["Custom web applications", "API & database integration", "Staging before launch"]
+      },
+      {
+        "id": "ops",
+        "title": "Commerce and operational systems",
+        "desc": "Online stores, booking, inventory, and payroll—products used daily by teams and customers, not demos that end with a slide deck.",
+        "points": ["E-commerce & payments", "Booking and inventory", "Security and monitoring"]
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "Work",
+    "title": "Products in daily use, not concepts in a deck.",
+    "lead": "Every project starts with a clear operational problem. We build the solution and measure success through daily use.",
+    "filterAria": "Filter work",
+    "all": "All",
+    "problem": "Challenge",
+    "built": "What we built",
+    "result": "Outcome",
+    "readStory": "Read the story →",
+    "categories": {
+      "webApp": "Web application",
+      "internal": "Internal system",
+      "ecommerce": "E-commerce",
+      "operations": "Operational system"
+    },
+    "items": {
+      "nexora-control": {
+        "industry": "National distribution",
+        "summary": "One dashboard for inventory, branch orders, and profit by SKU.",
+        "challenge": "Warehouse, sales, and finance teams used three separate tools. Inventory and invoices rarely matched.",
+        "solution": "One operational dashboard for real-time inventory, branch orders, and profit reporting by SKU.",
+        "result": "Weekly reconciliation fell from two days to four hours.",
+        "body": "Nexora ships goods to dozens of branches. Every morning, sales needs the same inventory figures the warehouse sees. We mapped the workflow from purchase order to invoice, then built one web application as the shared source of truth. Access is separated by role: warehouse staff record movements, sales checks availability, and finance downloads reports. We preserved how people work in the field while removing the wait for a weekend Excel file.",
+        "scope": ["Inventory and order dashboard", "Profit reports by SKU", "Role-based access", "Weekly exports", "Staging before launch"],
+        "imgAlt": "Nexora Control — inventory, branch order, and profit dashboard",
+        "galleryAlt": ["Nexora Control — weekly sales performance chart", "Nexora Control — operations team reviewing branch data"]
+      },
+      "brightwork-people": {
+        "industry": "HR & operations",
+        "summary": "An HR portal for leave, payslips, and reviews across 500+ employees.",
+        "challenge": "Recruitment, attendance, and payroll were scattered across email and Excel for more than 500 employees.",
+        "solution": "A mobile-accessible HR portal for leave workflows, payslips, and performance reviews.",
+        "result": "New employee onboarding now takes two days instead of two weeks.",
+        "body": "BrightWork was growing quickly, but HR had become a bottleneck. We built a self-service employee portal for requesting leave, downloading payslips, and checking contract status. Managers receive an approval queue instead of another email folder. Existing employee data was integrated in stages so monthly payroll continued without disruption.",
+        "scope": ["Mobile-first employee portal", "Leave and approval workflows", "Digital payslips", "Performance reviews", "Guided onboarding"],
+        "imgAlt": "BrightWork People — HR portal for leave, payslips, and reviews",
+        "galleryAlt": ["BrightWork People — HR meeting reviewing the onboarding flow"]
+      },
+      "vela-atelier": {
+        "industry": "Fashion retail",
+        "summary": "A branded store with loyalty and payments, connected to existing marketplaces.",
+        "challenge": "Online sales depended on marketplaces, leaving the brand without direct access to customer data.",
+        "solution": "A branded store with catalog, loyalty, and Midtrans payments, still connected to Shopee.",
+        "result": "Owned-channel revenue grew 2.4× in the first six months.",
+        "body": "Vela had a loyal customer base, but those customers shopped in someone else's storefront. We created a store that feels unmistakably theirs, with strong photography, clear sizing, and a short checkout. Inventory synchronization prevents overselling. The loyalty program brings repeat orders back to Vela's own channel instead of a marketplace algorithm.",
+        "scope": ["Catalog and size variants", "Midtrans checkout", "Loyalty program", "Marketplace inventory sync", "Order analytics"],
+        "imgAlt": "Vela Atelier — fashion storefront with catalog and loyalty program",
+        "galleryAlt": ["Vela Atelier — product details and branded shopping experience"]
+      },
+      "paxia-table": {
+        "industry": "Food & beverage",
+        "summary": "Live reservations for 12 outlets, QR menus, and POS synchronization.",
+        "challenge": "Twelve outlets managed reservations through WhatsApp, causing double bookings almost every weekend.",
+        "solution": "A live reservation system, QR menus, and POS synchronization for every outlet.",
+        "result": "No-shows fell 35%, and weekend queues became predictable.",
+        "body": "Paxia used to manage weekends through group chats. We replaced that process with a live table map for each outlet. Guests confirm through a link, hosts see remaining slots, and kitchens no longer guess cover counts. QR menus reduce printing and make branch-specific price updates simple.",
+        "scope": ["Real-time table map", "Reservation confirmation", "QR menus per outlet", "POS synchronization", "Weekend cover reports"],
+        "imgAlt": "Paxia Table — live reservations, QR menus, and restaurant table map",
+        "galleryAlt": ["Paxia Table — an outlet during weekend reservations"]
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "From brief to launch, with no guesswork.",
+    "lead": "You see progress every week. Staging is always available. What we agree at the start is what we deliver at the end.",
+    "items": [
+      ["01", "Listen first, propose second", "We sit down with the founder or operations lead to understand who uses the product, where work gets stuck, and what must be live in the first week.", "1–3 days"],
+      ["02", "A plan you can rely on", "Scope, architecture, wireframes, and timeline are documented. No surprise features appear halfway through without agreement.", "3–5 days"],
+      ["03", "Design ready for development", "Screen flows, components, and a prototype let the business team click through the product before development begins.", "5–10 days"],
+      ["04", "Build in staging", "You receive weekly updates and access to a test environment. Clients see the same product our engineers are building.", "2–8 weeks"],
+      ["05", "Test like a real user", "We test function, speed, security, and presentation from mobile to desktop. Bugs are resolved before the domain moves.", "3–7 days"],
+      ["06", "Launch, then stay with you", "We handle deployment, SSL, and monitoring, then support the first 30 days. Future features stay with the team that already knows the code.", "Ongoing"]
+    ]
+  },
+  "why": {
+    "eyebrow": "Why Lana Tech",
+    "title": "A small studio with full accountability.",
+    "reasons": [
+      ["One team, end to end", "The same people own the brief, design, code, and launch. Your project is never passed between unrelated vendors."],
+      ["Products people use, not slides", "Every decision is measured against daily users: warehouse admins, cashiers, or customers shopping on mobile."],
+      ["Code that can keep evolving", "Modern technology, practical documentation, and staging access mean the product can grow six months later without starting over."]
+    ],
+    "testimonials": [
+      ["Andi Prasetyo", "CEO, Nexora Distribusi", "AP", "The Lana Tech team stepped into our warehouse process instead of merely drawing screens. Sales uses the dashboard every morning—that is the measure we cared about."],
+      ["Sarah Wulandari", "Head of Brand, Vela Studio", "SW", "We finally have a store that feels like Vela, not a marketplace template. Our customer data is ours again, and checkout is effortless."],
+      ["Raka Mahendra", "Operations, Paxia Group", "RM", "Reservations across 12 branches became one queue. Weekends are no longer chaos on WhatsApp. That is what we paid for, and that is what they delivered."]
+    ]
+  },
+  "faq": {
+    "eyebrow": "Before we begin",
+    "title": "What should be clear from day one.",
+    "lead": "No withheld access, hidden fees, or code intentionally designed to keep you dependent on us.",
+    "ownershipTitle": "Your code, accounts, and access remain yours.",
+    "ownershipCopy": "We build products to hand over, not to lock clients into our services.",
+    "items": [
+      ["How long does a project take?", "A business website typically takes 2–4 weeks. Web applications and operational systems usually take 4–10 weeks, depending on workflows, user roles, and integrations. We document the timeline and milestones before development begins, so you know what will be completed at every stage."],
+      ["How many revision rounds are included?", "Two major revision rounds during design are included. Feedback is consolidated by round to keep changes focused. We refine small changes in staging during development; requests that alter scope, workflows, or features are estimated and agreed together first."],
+      ["Who owns the domain and hosting?", "The client does. Domains, hosting or cloud accounts, analytics, email, and payment services are created in your company's name or transferred during handover. Lana Tech receives only the access required for setup and deployment; account ownership and billing remain with you."],
+      ["Who owns the source code?", "After the project is complete and paid in full, all custom source code, Git repositories, designs, content, and digital assets created specifically for the project belong entirely to the client. Open-source dependencies and third-party services retain their respective licenses without reducing your control over the product we build."],
+      ["What is included at handover?", "You receive the source-code repository, production and staging access, a list of required environment variables without secrets in documents, build and deployment instructions, and concise operational documentation. Another development team can continue the work without depending on Lana Tech accounts or identities."],
+      ["Can our team or another vendor continue the work?", "Yes. We use widely adopted technologies such as Next.js, Laravel, Node.js, and PostgreSQL—not closed platforms. Maintenance with Lana Tech is available as an option, never a requirement for the product to keep running."],
+      ["Is the first consultation paid?", "No. The initial meeting helps us understand the problem, users, and business goals. If there is a fit, we provide a scope, technical approach, timeline, and cost estimate you can evaluate without hidden commitments."]
+    ]
+  },
+  "contact": {
+    "eyebrow": "Start a project",
+    "title": "Tell us what you need to build. We will respond with a plan, not an empty proposal.",
+    "lead": "The first consultation is free. Send us the context—website, application, or internal system—and we will reply within one business day.",
+    "thanks": "Thank you, {name}.",
+    "emailReady": "Your email is ready. If it did not open, continue on WhatsApp.",
+    "name": "Name",
+    "namePlaceholder": "Your name or company",
+    "email": "Email",
+    "emailPlaceholder": "email@company.com",
+    "message": "What would you like to build?",
+    "messagePlaceholder": "Website, dashboard, online store, booking system...",
+    "send": "Send brief",
+    "mailSubject": "New project from {name}",
+    "mailName": "Name"
+  },
+  "footer": {
+    "tagline": "A studio building production-ready digital products. Websites, web applications, and operational systems since 2022.",
+    "servicesTitle": "What we build",
+    "services": [["Business websites", "about"], ["Web applications", "about"], ["Dashboards & admin", "about"], ["E-commerce", "portfolio"], ["Operational systems", "portfolio"]],
+    "companyTitle": "Studio",
+    "company": [["Studio", "about"], ["Work", "portfolio"], ["How we work", "process"], ["FAQ", "faq"], ["Start a project", "contact"]],
+    "careers": "Careers",
+    "copyright": "© 2026 Lana Tech. Jakarta."
+  },
+  "workDetail": {
+    "allWork": "← All work",
+    "story": "Project story",
+    "scope": "What we delivered",
+    "ctaTitle": "Facing a similar operational challenge?",
+    "ctaCopy": "Tell Lana Tech about it. We will respond with a plan, not an empty slide deck.",
+    "start": "Start a project",
+    "other": "More work"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for may have moved or is no longer available.",
+    "back": "Back to home"
+  }
+}

@@ -1,21 +1,45 @@
 "use client"
 
 import { useState } from "react"
+
 import Image from "next/image"
-import Link from "next/link"
+
 import { motion } from "framer-motion"
-import { work } from "@/data/site"
+
+import { getWork, type CategoryKey } from "@/data/site"
+
+import { Link } from "@/i18n/navigation"
+
 import { imageBlur } from "@/lib/image"
+
+import { useSiteMessages } from "@/hooks/useSiteMessages"
+
 import { usePrefersReducedMotion } from "@/hooks/useScrollLayers"
 
-const filters = ["Semua", ...Array.from(new Set(work.map((w) => w.category)))]
-
 export default function Work() {
-  const [filter, setFilter] = useState("Semua")
+  const messages = useSiteMessages()
+
+  const work = getWork(messages)
+
+  const copy = messages.work
+
+  const filters: Array<"all" | CategoryKey> = [
+    "all",
+    "webApp",
+    "internal",
+    "ecommerce",
+    "operations",
+  ]
+
+  const [filter, setFilter] = useState<"all" | CategoryKey>("all")
+
   const reduce = usePrefersReducedMotion()
+
   const visible =
-    filter === "Semua" ? work : work.filter((w) => w.category === filter)
+    filter === "all" ? work : work.filter((item) => item.categoryKey === filter)
+
   const featured = visible.find((w) => w.featured) ?? visible[0]
+
   const rest = visible.filter((w) => w !== featured)
 
   if (!featured) return null
@@ -30,42 +54,45 @@ export default function Work() {
           className="text-xs font-semibold uppercase tracking-widest mb-4"
           style={{ color: "var(--primary)" }}
         >
-          Karya
+          {copy.eyebrow}
         </p>
         <h2
           className="mb-3"
           style={{
             fontSize: "clamp(1.9rem, 3.4vw, 3rem)",
+
             fontWeight: 800,
+
             letterSpacing: "-0.04em",
+
             lineHeight: 1.15,
+
             color: "var(--fg)",
           }}
         >
-          Produk yang sudah dipakai, bukan konsep di deck.
+          {copy.title}
         </h2>
         <p
           className="mb-8"
           style={{ color: "var(--fg-muted)", maxWidth: 540, lineHeight: 1.7 }}
         >
-          Setiap project punya masalah operasional yang jelas. Kami bangun
-          solusinya, lalu ukur dari pemakaian harian.
+          {copy.lead}
         </p>
 
         <div
           className="flex flex-wrap gap-2 mb-10"
           role="group"
-          aria-label="Filter karya"
+          aria-label={copy.filterAria}
         >
-          {filters.map((cat) => (
+          {filters.map((key) => (
             <button
-              key={cat}
+              key={key}
               type="button"
-              className={`filter-chip${filter === cat ? " is-active" : ""}`}
-              aria-pressed={filter === cat}
-              onClick={() => setFilter(cat)}
+              className={`filter-chip${filter === key ? " is-active" : ""}`}
+              aria-pressed={filter === key}
+              onClick={() => setFilter(key)}
             >
-              {cat}
+              {key === "all" ? copy.all : copy.categories[key]}
             </button>
           ))}
         </div>
@@ -75,6 +102,7 @@ export default function Work() {
           className="work-featured rounded-3xl mb-6"
           style={{
             background: "var(--bg-card)",
+
             border: "1px solid var(--border)",
           }}
           initial={reduce ? false : { opacity: 0, y: 28 }}
@@ -133,7 +161,10 @@ export default function Work() {
               style={{ color: "var(--fg)", letterSpacing: "-0.03em" }}
             >
               <Link
-                href={`/karya/${featured.slug}`}
+                href={{
+                  pathname: "/karya/[slug]",
+                  params: { slug: featured.slug },
+                }}
                 className="no-underline"
                 style={{ color: "inherit" }}
               >
@@ -149,13 +180,13 @@ export default function Work() {
             >
               <div>
                 <dt className="font-semibold" style={{ color: "var(--fg)" }}>
-                  Masalah
+                  {copy.problem}
                 </dt>
                 <dd>{featured.challenge}</dd>
               </div>
               <div>
                 <dt className="font-semibold" style={{ color: "var(--fg)" }}>
-                  Yang dibangun
+                  {copy.built}
                 </dt>
                 <dd>{featured.solution}</dd>
               </div>
@@ -164,7 +195,7 @@ export default function Work() {
                   className="font-semibold"
                   style={{ color: "var(--primary)" }}
                 >
-                  Hasil
+                  {copy.result}
                 </dt>
                 <dd>{featured.result}</dd>
               </div>
@@ -176,7 +207,9 @@ export default function Work() {
                   className="text-xs font-medium px-2.5 py-1 rounded-lg"
                   style={{
                     background: "var(--bg-alt)",
+
                     border: "1px solid var(--border)",
+
                     color: "var(--fg)",
                   }}
                 >
@@ -184,11 +217,14 @@ export default function Work() {
                 </span>
               ))}
               <Link
-                href={`/karya/${featured.slug}`}
+                href={{
+                  pathname: "/karya/[slug]",
+                  params: { slug: featured.slug },
+                }}
                 className="text-sm font-semibold no-underline"
                 style={{ color: "var(--primary)" }}
               >
-                Baca cerita →
+                {copy.readStory}
               </Link>
             </div>
           </div>
@@ -205,7 +241,10 @@ export default function Work() {
               transition={{ delay: i * 0.06 }}
             >
               <Link
-                href={`/karya/${item.slug}`}
+                href={{
+                  pathname: "/karya/[slug]",
+                  params: { slug: item.slug },
+                }}
                 className="no-underline block"
                 style={{ color: "inherit" }}
               >
@@ -240,7 +279,7 @@ export default function Work() {
                     className="text-xs font-semibold"
                     style={{ color: "var(--primary)" }}
                   >
-                    Baca cerita →
+                    {copy.readStory}
                   </span>
                 </div>
               </Link>

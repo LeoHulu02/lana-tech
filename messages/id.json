@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "title": "Lana Tech — Studio produk digital, Jakarta",
+    "description": "Lana Tech merancang dan mengembangkan website, aplikasi web, dan sistem operasional yang siap dipakai tim setiap hari.",
+    "socialDescription": "Website, aplikasi web, dan sistem custom — dari brief sampai produk live.",
+    "keywords": "Lana Tech, studio produk digital, web development Jakarta, aplikasi web custom, sistem operasional, Next.js",
+    "ogTitle": "Produk digital yang siap bekerja.",
+    "ogSubtitle": "Website, aplikasi web, dan sistem operasional — dari brief sampai live.",
+    "ogFooter": "Studio product engineering · Jakarta Selatan"
+  },
+  "common": {
+    "skipToContent": "Lewati ke konten",
+    "productStudio": "Product studio",
+    "homeLabel": "Lana Tech beranda",
+    "location": "Jakarta Selatan"
+  },
+  "nav": {
+    "aria": "Utama",
+    "about": "Studio",
+    "portfolio": "Karya",
+    "process": "Proses",
+    "faq": "FAQ",
+    "contact": "Kontak",
+    "consultation": "Konsultasi",
+    "darkMode": "Aktifkan mode gelap",
+    "lightMode": "Aktifkan mode terang",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "language": "Ganti bahasa"
+  },
+  "hero": {
+    "eyebrow": "Product engineering studio · Jakarta Selatan",
+    "title": "Produk digital yang",
+    "titleAccent": " siap bekerja.",
+    "lead": "Kami merancang dan membangun website, aplikasi web, dan sistem operasional yang dipakai tim sungguhan—dari brief sampai live.",
+    "viewWork": "Lihat karya",
+    "discuss": "Diskusikan project",
+    "ownership": "Source code milik klien",
+    "support": "30 hari pendampingan",
+    "dashboardAria": "Contoh dashboard operasional yang dibuat Lana Tech",
+    "search": "Cari data...",
+    "sidebar": ["Overview", "Pesanan", "Inventory", "Pelanggan", "Laporan"],
+    "needHelp": "Butuh bantuan?",
+    "contactSupport": "Hubungi support",
+    "date": "Senin, 8 September",
+    "greeting": "Selamat pagi, Nara.",
+    "download": "Unduh laporan",
+    "metrics": [
+      ["Pendapatan", "Rp84,2 jt", "+18.4%"],
+      ["Pesanan aktif", "284", "+12 hari ini"],
+      ["Stok tersedia", "1.284", "98% sehat"]
+    ],
+    "salesPerformance": "Performa penjualan",
+    "salesTotal": "Rp428,6 jt",
+    "days": "30 hari",
+    "chartLabels": ["10 Agu", "20 Agu", "30 Agu", "8 Sep"],
+    "latestActivity": "Aktivitas terbaru",
+    "live": "Live",
+    "activity": [
+      ["Pesanan #LN-2841", "Jakarta Selatan", "+ Rp8,4 jt"],
+      ["Stok diperbarui", "Gudang Utama", "128 SKU"],
+      ["Invoice dibayar", "Nexora Bandung", "+ Rp3,2 jt"]
+    ],
+    "availableBalance": "Saldo tersedia",
+    "balance": "Rp24.840.000",
+    "monthlyTarget": "Target bulanan",
+    "operationalSystem": "System operational"
+  },
+  "proof": {
+    "stats": [
+      ["40+", "Produk digital live"],
+      ["18", "Klien aktif"],
+      ["4 th", "Membangun di Jakarta"],
+      ["30 hr", "Pendampingan pasca rilis"]
+    ],
+    "usedBy": "Dipakai tim operasional di"
+  },
+  "capabilities": {
+    "eyebrow": "Studio",
+    "title": "Kami membangun produk yang tim kamu pakai besok pagi.",
+    "intro1": "Lana Tech adalah studio di Jakarta Selatan, berdiri 2022. Fokus kami sempit: website, aplikasi web, dan sistem operasional — dikerjakan sampai benar-benar live.",
+    "intro2": "Kalau yang kamu butuh hanya brochure site, kami kerjakan. Kalau yang kamu butuh dashboard, booking, atau toko dengan pembayaran, itu pekerjaan harian kami.",
+    "items": [
+      {
+        "id": "web",
+        "title": "Website yang bekerja untuk bisnis",
+        "desc": "Bukan sekadar halaman cantik. Kami merancang situs yang cepat, jelas, dan siap menangkap leads — company profile, landing campaign, sampai portal konten.",
+        "points": ["Company profile & kampanye", "Performa dan SEO teknis", "Siap mobile dari awal"]
+      },
+      {
+        "id": "app",
+        "title": "Aplikasi web & dashboard",
+        "desc": "Kalau operasional sudah tidak muat di spreadsheet, kami bangun sistemnya: admin panel, alur persetujuan, laporan real-time, dan akses per peran.",
+        "points": ["Custom web application", "Integrasi API & database", "Staging sebelum rilis"]
+      },
+      {
+        "id": "ops",
+        "title": "Commerce dan sistem operasional",
+        "desc": "Toko online, booking, inventory, payroll — produk yang dipakai setiap hari oleh tim dan pelanggan, bukan demo yang berhenti di slide.",
+        "points": ["E-commerce & payment", "Booking dan inventory", "Keamanan dan monitoring"]
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "Karya",
+    "title": "Produk yang sudah dipakai, bukan konsep di deck.",
+    "lead": "Setiap project punya masalah operasional yang jelas. Kami bangun solusinya, lalu ukur dari pemakaian harian.",
+    "filterAria": "Filter karya",
+    "all": "Semua",
+    "problem": "Masalah",
+    "built": "Yang dibangun",
+    "result": "Hasil",
+    "readStory": "Baca cerita →",
+    "categories": {
+      "webApp": "Aplikasi web",
+      "internal": "Sistem internal",
+      "ecommerce": "E-commerce",
+      "operations": "Sistem operasional"
+    },
+    "items": {
+      "nexora-control": {
+        "industry": "Distribusi nasional",
+        "summary": "Satu dashboard untuk stok, pesanan cabang, dan laba per SKU.",
+        "challenge": "Tim gudang, sales, dan keuangan memakai tiga tools berbeda. Stok dan invoice sering tidak ketemu.",
+        "solution": "Satu dashboard operasional: stok real-time, pesanan cabang, dan laporan laba per SKU.",
+        "result": "Waktu rekonsiliasi mingguan turun dari 2 hari menjadi 4 jam.",
+        "body": "Nexora mengirim barang ke puluhan cabang. Setiap pagi sales butuh angka stok yang sama dengan yang dilihat gudang. Kami memetakan alur dari PO sampai invoice, lalu membangun satu aplikasi web yang jadi sumber data bersama. Peran akses dipisah: gudang input mutasi, sales lihat ketersediaan, keuangan unduh laporan. Yang tidak berubah adalah cara kerja orang di lapangan — yang berubah adalah mereka tidak lagi menunggu file Excel malam minggu.",
+        "scope": ["Dashboard stok dan pesanan", "Laporan laba per SKU", "Akses per peran", "Export mingguan", "Staging sebelum rilis"],
+        "imgAlt": "Nexora Control — dashboard stok, pesanan cabang, dan laba per SKU",
+        "galleryAlt": ["Nexora Control — grafik performa penjualan mingguan", "Nexora Control — tim operasional meninjau data cabang"]
+      },
+      "brightwork-people": {
+        "industry": "HR & operasi",
+        "summary": "Portal SDM untuk cuti, slip gaji, dan evaluasi 500+ staf.",
+        "challenge": "Rekrutmen, absensi, dan payroll masih tersebar di email dan Excel untuk 500+ staf.",
+        "solution": "Portal SDM dengan alur cuti, slip gaji, dan evaluasi kinerja yang bisa diakses dari HP.",
+        "result": "Onboarding karyawan baru selesai dalam 2 hari, bukan 2 minggu.",
+        "body": "BrightWork tumbuh cepat, tapi HR masih jadi bottleneck. Kami bangun portal yang dipakai karyawan sendiri: ajukan cuti, unduh slip, lihat status kontrak. Manager mendapat antrian persetujuan, bukan folder email. Integrasi ke data karyawan existing dilakukan bertahap supaya payroll tidak terganggu di tengah bulan.",
+        "scope": ["Portal karyawan mobile-first", "Alur cuti dan persetujuan", "Slip gaji digital", "Evaluasi kinerja", "Onboarding terpandu"],
+        "imgAlt": "BrightWork People — portal SDM untuk cuti, slip gaji, dan evaluasi",
+        "galleryAlt": ["BrightWork People — rapat HR meninjau alur onboarding"]
+      },
+      "vela-atelier": {
+        "industry": "Fashion ritel",
+        "summary": "Toko sendiri dengan loyalty dan pembayaran, tetap tersambung marketplace.",
+        "challenge": "Penjualan online bergantung pada marketplace. Brand tidak punya data pelanggan sendiri.",
+        "solution": "Toko sendiri dengan katalog, loyalty, dan pembayaran Midtrans — tetap tersambung Shopee.",
+        "result": "Pendapatan kanal sendiri naik 2,4x di semester pertama.",
+        "body": "Vela punya basis pembeli setia, tapi mereka belanja di etalase orang lain. Kami membuat toko yang terasa milik brand: foto, ukuran, dan checkout yang singkat. Stok disinkron supaya tidak oversell. Program loyalty membuat repeat order kembali ke kanal Vela, bukan ke algoritma marketplace.",
+        "scope": ["Katalog dan variant ukuran", "Checkout Midtrans", "Program loyalty", "Sinkron stok marketplace", "Analytics pesanan"],
+        "imgAlt": "Vela Atelier — etalase toko fashion dengan katalog dan loyalty",
+        "galleryAlt": ["Vela Atelier — detail produk dan pengalaman belanja merek sendiri"]
+      },
+      "paxia-table": {
+        "industry": "F&B",
+        "summary": "Reservasi live untuk 12 outlet, menu QR, dan sinkron kasir.",
+        "challenge": "12 outlet mereservasi meja lewat WhatsApp. Double booking hampir setiap weekend.",
+        "solution": "Sistem reservasi live, menu QR, dan sinkron ke kasir tiap cabang.",
+        "result": "No-show turun 35%, antrian weekend lebih terukur.",
+        "body": "Weekend di Paxia sebelumnya ditangani chat group. Kami ganti dengan peta meja per outlet yang di-update live. Tamu konfirmasi lewat tautan, hostess melihat sisa slot, dapur tidak lagi menebak jumlah cover. Menu QR mengurangi cetak kertas dan memudahkan ganti harga per cabang.",
+        "scope": ["Peta meja real-time", "Konfirmasi reservasi", "Menu QR per outlet", "Sinkron kasir", "Laporan cover weekend"],
+        "imgAlt": "Paxia Table — reservasi live, menu QR, dan denah meja restoran",
+        "galleryAlt": ["Paxia Table — suasana outlet saat reservasi weekend"]
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Cara kerja",
+    "title": "Dari brief sampai produk live, tanpa tebak-tebakan.",
+    "lead": "Kamu melihat progres setiap minggu. Staging selalu terbuka. Yang kami janjikan di awal adalah yang dikirim di akhir.",
+    "items": [
+      ["01", "Dengar dulu, baru usul", "Kami duduk dengan founder atau kepala operasional. Yang dicari: siapa pemakainya, proses yang macet, dan apa yang harus hidup di minggu pertama rilis.", "1–3 hari"],
+      ["02", "Rencana yang bisa dipegang", "Ruang lingkup, arsitektur, wireframe, dan timeline tertulis. Tidak ada fitur siluman di tengah jalan tanpa kesepakatan.", "3–5 hari"],
+      ["03", "Desain yang siap dikode", "Alur layar, komponen, dan prototype. Tim bisnis bisa klik sebelum development dimulai.", "5–10 hari"],
+      ["04", "Bangun di staging", "Kamu dapat update mingguan dan akses lingkungan uji. Yang dilihat klien sama dengan yang dikerjakan engineer.", "2–8 minggu"],
+      ["05", "Uji seperti pemakai sungguhan", "Fungsi, kecepatan, keamanan, dan tampilan di HP sampai desktop. Bug ditutup sebelum domain dipindah.", "3–7 hari"],
+      ["06", "Rilis, lalu dampingi", "Deploy, SSL, monitoring. 30 hari pertama kami jaga. Kalau mau lanjut fitur, tim yang sama yang sudah kenal kodenya.", "Berjalan"]
+    ]
+  },
+  "why": {
+    "eyebrow": "Kenapa Lana Tech",
+    "title": "Studio kecil, tanggung jawab penuh.",
+    "reasons": [
+      ["Satu tim, ujung ke ujung", "Brief, desain, kode, dan rilis dipegang orang yang sama. Tidak ada lempar-lemparan ke vendor lain di tengah project."],
+      ["Produk yang dipakai, bukan slide", "Setiap keputusan diukur dari pemakai harian: admin gudang, kasir, atau calon pembeli di HP."],
+      ["Kode yang bisa dilanjutkan", "Stack modern, dokumentasi cukup, dan akses staging. Enam bulan kemudian masih bisa ditambah fitur tanpa mulai dari nol."]
+    ],
+    "testimonials": [
+      ["Andi Prasetyo", "CEO, Nexora Distribusi", "AP", "Tim Lana Tech masuk ke proses gudang kami, bukan cuma menggambar layar. Dashboard-nya dipakai sales setiap pagi — itu ukuran yang kami cari."],
+      ["Sarah Wulandari", "Head of Brand, Vela Studio", "SW", "Akhirnya ada toko yang terasa milik Vela, bukan template marketplace. Data pelanggan kembali ke kami, dan checkoutnya tidak membingungkan."],
+      ["Raka Mahendra", "Operations, Paxia Group", "RM", "Reservasi 12 cabang jadi satu antrian. Weekend tidak lagi chaos di WhatsApp. Itu yang kami bayar, dan itu yang dikirim."]
+    ]
+  },
+  "faq": {
+    "eyebrow": "Sebelum kita mulai",
+    "title": "Hal yang seharusnya jelas sejak awal.",
+    "lead": "Tidak ada akses yang ditahan, biaya yang disembunyikan, atau kode yang sengaja dibuat bergantung pada kami.",
+    "ownershipTitle": "Kode, akun, dan akses tetap milikmu.",
+    "ownershipCopy": "Kami membangun produk untuk diserahkan, bukan untuk mengunci klien di dalam layanan kami.",
+    "items": [
+      ["Berapa lama pengerjaan sebuah project?", "Website bisnis biasanya membutuhkan 2–4 minggu. Aplikasi web atau sistem operasional umumnya 4–10 minggu, tergantung jumlah alur, peran pengguna, dan integrasi. Timeline dan milestone kami tulis sebelum development dimulai, jadi kamu tahu apa yang selesai di setiap tahap."],
+      ["Berapa kali revisi yang termasuk?", "Dua putaran revisi besar di tahap desain sudah termasuk. Feedback dikumpulkan per putaran agar perubahan tetap terarah. Perubahan kecil saat development kami rapikan di staging; permintaan yang mengubah scope, alur, atau fitur akan kami estimasikan dan setujui bersama terlebih dahulu."],
+      ["Siapa yang memegang domain dan hosting?", "Klien. Domain, hosting atau cloud, analytics, email, dan layanan pembayaran dibuat atas nama perusahaanmu atau dipindahkan saat handover. Lana Tech mendapat akses seperlunya untuk setup dan deployment, tetapi kepemilikan akun serta billing tetap di tanganmu."],
+      ["Source code menjadi milik siapa?", "Setelah project selesai dan dilunasi, seluruh source code custom, repositori Git, desain, konten, dan aset digital yang dibuat khusus untuk project menjadi milik klien sepenuhnya. Dependency open-source dan layanan pihak ketiga tetap mengikuti lisensi masing-masing, tetapi tidak mengurangi kontrolmu atas produk yang kami bangun."],
+      ["Apa saja yang diterima saat handover?", "Kamu menerima repositori source code, akses production dan staging, daftar environment yang dibutuhkan tanpa menaruh secret di dokumen, petunjuk build dan deployment, serta dokumentasi operasional ringkas. Tim developer lain bisa melanjutkan tanpa harus bergantung pada akun atau identitas Lana Tech."],
+      ["Apakah tim kami atau vendor lain bisa melanjutkan?", "Bisa. Kami menggunakan stack umum seperti Next.js, Laravel, Node.js, dan PostgreSQL—bukan platform tertutup. Maintenance bersama Lana Tech tersedia sebagai pilihan, bukan syarat agar produk tetap berjalan."],
+      ["Apakah konsultasi pertama berbayar?", "Tidak. Pertemuan awal digunakan untuk memahami masalah, pengguna, dan target bisnis. Kalau cocok, kami lanjutkan dengan scope, pendekatan teknis, timeline, serta estimasi biaya yang bisa kamu evaluasi tanpa komitmen tersembunyi."]
+    ]
+  },
+  "contact": {
+    "eyebrow": "Mulai project",
+    "title": "Ceritakan yang hendak dibangun. Kami balas dengan rencana, bukan proposal kosong.",
+    "lead": "Konsultasi pertama gratis. Kirim konteksnya — website, aplikasi, atau sistem internal — kami jawab dalam 1 hari kerja.",
+    "thanks": "Terima kasih, {name}.",
+    "emailReady": "Email sudah disiapkan. Jika tidak terbuka, lanjut lewat WhatsApp.",
+    "name": "Nama",
+    "namePlaceholder": "Nama kamu atau perusahaan",
+    "email": "Email",
+    "emailPlaceholder": "email@perusahaan.com",
+    "message": "Yang ingin dibangun",
+    "messagePlaceholder": "Website, dashboard, toko online, sistem booking...",
+    "send": "Kirim brief",
+    "mailSubject": "Project baru dari {name}",
+    "mailName": "Nama"
+  },
+  "footer": {
+    "tagline": "Studio yang membangun produk digital siap pakai. Website, aplikasi web, dan sistem operasional sejak 2022.",
+    "servicesTitle": "Yang kami bangun",
+    "services": [["Website bisnis", "about"], ["Aplikasi web", "about"], ["Dashboard & admin", "about"], ["E-commerce", "portfolio"], ["Sistem operasional", "portfolio"]],
+    "companyTitle": "Studio",
+    "company": [["Studio", "about"], ["Karya", "portfolio"], ["Cara kerja", "process"], ["FAQ", "faq"], ["Mulai project", "contact"]],
+    "careers": "Karir",
+    "copyright": "© 2026 Lana Tech. Jakarta."
+  },
+  "workDetail": {
+    "allWork": "← Semua karya",
+    "story": "Cerita project",
+    "scope": "Yang kami kerjakan",
+    "ctaTitle": "Punya masalah operasional yang mirip?",
+    "ctaCopy": "Ceritakan ke Lana Tech. Kami balas dengan rencana, bukan slide kosong.",
+    "start": "Mulai project",
+    "other": "Karya lain"
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "description": "Halaman yang kamu cari mungkin sudah dipindahkan atau tidak tersedia.",
+    "back": "Kembali ke beranda"
+  }
+}

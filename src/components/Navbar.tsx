@@ -1,36 +1,62 @@
 "use client"
 
 import { useEffect, useState } from "react"
+
+import { useLocale, useTranslations } from "next-intl"
+
 import { IconClose, IconMenu, IconMoon, IconSun } from "@/components/icons"
-import { company, navLinks } from "@/data/site"
+
+import LocaleSwitcher from "@/components/LocaleSwitcher"
+
+import { company, navIds } from "@/data/site"
+
 import { useTheme } from "@/hooks/useTheme"
+
+function localizedHome(locale: string) {
+  return locale === "en" ? "/en/" : "/"
+}
 
 export default function Navbar({
   activeSection,
   home = true,
-}: {
+}: Readonly<{
   activeSection?: string
   home?: boolean
-}) {
+}>) {
+  const locale = useLocale()
+
+  const t = useTranslations()
+
   const { theme, toggleTheme } = useTheme()
+
   const [menuOpen, setMenuOpen] = useState(false)
+
   const [scrolled, setScrolled] = useState(false)
+
+  const root = localizedHome(locale)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
+
     onScroll()
+
     window.addEventListener("scroll", onScroll, { passive: true })
+
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
   useEffect(() => {
     if (!menuOpen) return
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuOpen(false)
-    }
+
+    const onKey = (event: KeyboardEvent) =>
+      event.key === "Escape" && setMenuOpen(false)
+
     window.addEventListener("keydown", onKey)
+
     return () => window.removeEventListener("keydown", onKey)
   }, [menuOpen])
+
+  const sectionHref = (id: string) => (home ? `#${id}` : `${root}#${id}`)
 
   return (
     <header
@@ -44,7 +70,7 @@ export default function Navbar({
         borderBottom: "1px solid var(--border)",
       }}
     >
-      <nav aria-label="Utama">
+      <nav aria-label={t("nav.aria")}>
         <div
           className="flex items-center justify-between"
           style={{
@@ -55,9 +81,9 @@ export default function Navbar({
           }}
         >
           <a
-            href={home ? "#main" : "/"}
+            href={home ? "#main" : root}
             className="no-underline flex items-center gap-2.5"
-            aria-label={`${company.name} beranda`}
+            aria-label={t("common.homeLabel")}
           >
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center font-extrabold text-white text-sm"
@@ -79,49 +105,50 @@ export default function Navbar({
                 className="text-xs leading-none mt-0.5"
                 style={{ color: "var(--fg-muted)" }}
               >
-                Product studio
+                {t("common.productStudio")}
               </div>
             </div>
           </a>
 
           <div className="hidden md:flex items-center gap-7">
-            {navLinks.map((link) => (
+            {navIds.map((id) => (
               <a
-                key={link.id}
-                href={home ? `#${link.id}` : `/#${link.id}`}
+                key={id}
+                href={sectionHref(id)}
                 className={`nav-link text-sm font-medium${
-                  activeSection === link.id ? " is-active" : ""
+                  activeSection === id ? " is-active" : ""
                 }`}
               >
-                {link.label}
+                {t(`nav.${id}`)}
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-2">
+            <div className="hidden md:block">
+              <LocaleSwitcher />
+            </div>
             <button
               type="button"
               onClick={toggleTheme}
               aria-label={
-                theme === "light"
-                  ? "Aktifkan mode gelap"
-                  : "Aktifkan mode terang"
+                theme === "light" ? t("nav.darkMode") : t("nav.lightMode")
               }
               className="icon-btn w-11 h-11 rounded-xl flex items-center justify-center"
             >
               {theme === "light" ? <IconMoon /> : <IconSun />}
             </button>
             <a
-              href={home ? "#contact" : "/#contact"}
+              href={sectionHref("contact")}
               className="btn-primary hidden md:inline-flex text-sm font-semibold px-5 py-2.5"
             >
-              Konsultasi
+              {t("nav.consultation")}
             </a>
             <button
               type="button"
               className="md:hidden icon-btn w-11 h-11 rounded-xl flex items-center justify-center"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
+              aria-label={menuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
             >
@@ -140,22 +167,23 @@ export default function Navbar({
               padding: "16px 24px",
             }}
           >
-            {navLinks.map((link) => (
+            {navIds.map((id) => (
               <a
-                key={link.id}
-                href={home ? `#${link.id}` : `/#${link.id}`}
+                key={id}
+                href={sectionHref(id)}
                 className="nav-link text-sm font-semibold py-2"
                 onClick={() => setMenuOpen(false)}
               >
-                {link.label}
+                {t(`nav.${id}`)}
               </a>
             ))}
+            <LocaleSwitcher />
             <a
-              href={home ? "#contact" : "/#contact"}
+              href={sectionHref("contact")}
               className="btn-primary text-sm font-semibold px-5 py-3 text-center"
               onClick={() => setMenuOpen(false)}
             >
-              Konsultasi
+              {t("nav.consultation")}
             </a>
           </div>
         )}

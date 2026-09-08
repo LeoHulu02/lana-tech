@@ -1,70 +1,59 @@
 "use client"
 
 import { motion } from "framer-motion"
+
 import { IconShield } from "@/components/icons"
-import { company } from "@/data/site"
+
+import { useSiteMessages } from "@/hooks/useSiteMessages"
+
 import { useHeroScroll } from "@/hooks/useScrollLayers"
 
-const activity = [
-  { name: "Pesanan #LN-2841", meta: "Jakarta Selatan", value: "+ Rp8,4 jt" },
-  { name: "Stok diperbarui", meta: "Gudang Utama", value: "128 SKU" },
-  { name: "Invoice dibayar", meta: "Nexora Bandung", value: "+ Rp3,2 jt" },
-]
-
 function DashboardVisual() {
+  const copy = useSiteMessages().hero
+
   return (
-    <div
-      className="hero-dashboard"
-      role="img"
-      aria-label="Contoh dashboard operasional yang dibuat Lana Tech"
-    >
+    <div className="hero-dashboard" role="img" aria-label={copy.dashboardAria}>
       <div className="hero-dashboard-bar">
         <div className="hero-dashboard-brand">
           <span className="hero-dashboard-logo">L</span>
           <span>Lana Ops</span>
         </div>
         <div className="hero-dashboard-actions">
-          <span className="hero-dashboard-search">Cari data...</span>
+          <span className="hero-dashboard-search">{copy.search}</span>
           <span className="hero-dashboard-avatar">NA</span>
         </div>
       </div>
 
       <div className="hero-dashboard-body">
         <aside className="hero-dashboard-sidebar" aria-hidden="true">
-          {["Overview", "Pesanan", "Inventory", "Pelanggan", "Laporan"].map(
-            (item, index) => (
-              <span
-                key={item}
-                className={`hero-dashboard-nav${
-                  index === 0 ? " is-current" : ""
-                }`}
-              >
-                <i />
-                {item}
-              </span>
-            ),
-          )}
+          {copy.sidebar.map((item, index) => (
+            <span
+              key={item}
+              className={`hero-dashboard-nav${
+                index === 0 ? " is-current" : ""
+              }`}
+            >
+              <i />
+              {item}
+            </span>
+          ))}
           <div className="hero-sidebar-help">
-            <span>Butuh bantuan?</span>
-            <strong>Hubungi support</strong>
+            <span>{copy.needHelp}</span>
+            <strong>{copy.contactSupport}</strong>
           </div>
         </aside>
 
         <div className="hero-dashboard-main">
           <div className="hero-dashboard-heading">
             <div>
-              <span className="hero-dashboard-kicker">Senin, 8 September</span>
-              <strong>Selamat pagi, Nara.</strong>
+              <span className="hero-dashboard-kicker">{copy.date}</span>
+              <strong>{copy.greeting}</strong>
             </div>
-            <span className="hero-dashboard-download">Unduh laporan</span>
+            <span className="hero-dashboard-download">{copy.download}</span>
           </div>
 
           <div className="hero-metrics">
-            {[
-              ["Pendapatan", "Rp84,2 jt", "+18.4%"],
-              ["Pesanan aktif", "284", "+12 hari ini"],
-              ["Stok tersedia", "1.284", "98% sehat"],
-            ].map(([label, value, trend]) => (
+            {copy.metrics.map(([label, value, trend]) => (
               <div className="hero-metric" key={label}>
                 <span>{label}</span>
                 <strong>{value}</strong>
@@ -77,10 +66,10 @@ function DashboardVisual() {
             <div className="hero-chart-card">
               <div className="hero-card-heading">
                 <div>
-                  <span>Performa penjualan</span>
-                  <strong>Rp428,6 jt</strong>
+                  <span>{copy.salesPerformance}</span>
+                  <strong>{copy.salesTotal}</strong>
                 </div>
-                <small>30 hari</small>
+                <small>{copy.days}</small>
               </div>
               <div className="hero-chart" aria-hidden="true">
                 <span className="hero-chart-grid grid-one" />
@@ -119,27 +108,26 @@ function DashboardVisual() {
                 </svg>
               </div>
               <div className="hero-chart-labels">
-                <span>10 Agu</span>
-                <span>20 Agu</span>
-                <span>30 Agu</span>
-                <span>8 Sep</span>
+                {copy.chartLabels.map((label) => (
+                  <span key={label}>{label}</span>
+                ))}
               </div>
             </div>
 
             <div className="hero-activity-card">
               <div className="hero-card-heading">
-                <span>Aktivitas terbaru</span>
-                <small>Live</small>
+                <span>{copy.latestActivity}</span>
+                <small>{copy.live}</small>
               </div>
               <div className="hero-activity-list">
-                {activity.map((item, index) => (
-                  <div className="hero-activity-row" key={item.name}>
+                {copy.activity.map(([name, meta, value], index) => (
+                  <div className="hero-activity-row" key={name}>
                     <span className={`hero-activity-icon icon-${index + 1}`} />
                     <div>
-                      <strong>{item.name}</strong>
-                      <small>{item.meta}</small>
+                      <strong>{name}</strong>
+                      <small>{meta}</small>
                     </div>
-                    <em>{item.value}</em>
+                    <em>{value}</em>
                   </div>
                 ))}
               </div>
@@ -152,19 +140,21 @@ function DashboardVisual() {
 }
 
 function MobileCompanion() {
+  const copy = useSiteMessages().hero
+
   return (
     <div className="hero-mobile-card" aria-hidden="true">
       <div className="hero-mobile-handle" />
       <div className="hero-mobile-label">
-        <span>Saldo tersedia</span>
+        <span>{copy.availableBalance}</span>
         <i>•••</i>
       </div>
-      <strong>Rp24.840.000</strong>
+      <strong>{copy.balance}</strong>
       <div className="hero-mobile-progress">
         <span />
       </div>
       <div className="hero-mobile-meta">
-        <span>Target bulanan</span>
+        <span>{copy.monthlyTarget}</span>
         <strong>78%</strong>
       </div>
     </div>
@@ -172,6 +162,8 @@ function MobileCompanion() {
 }
 
 export default function Hero() {
+  const copy = useSiteMessages().hero
+
   const { ref, backdropY, dashboardY, phoneY, copyY, orbitRotate, fade } =
     useHeroScroll()
 
@@ -196,33 +188,30 @@ export default function Hero() {
         >
           <p className="hero-eyebrow">
             <span />
-            Product engineering studio · {company.city}
+            {copy.eyebrow}
           </p>
           <h1 className="hero-premium-title">
-            Produk digital yang
-            <span> siap bekerja.</span>
+            {copy.title}
+            <span>{copy.titleAccent}</span>
           </h1>
-          <p className="hero-premium-lead">
-            Kami merancang dan membangun website, aplikasi web, dan sistem
-            operasional yang dipakai tim sungguhan—dari brief sampai live.
-          </p>
+          <p className="hero-premium-lead">{copy.lead}</p>
           <div className="hero-premium-actions">
             <a href="#portfolio" className="btn-primary hero-cta">
-              Lihat karya
+              {copy.viewWork}
               <span aria-hidden="true">↗</span>
             </a>
             <a href="#contact" className="btn-ghost hero-cta">
-              Diskusikan project
+              {copy.discuss}
             </a>
           </div>
           <div className="hero-trust">
             <span>
               <IconShield size={16} />
-              Source code milik klien
+              {copy.ownership}
             </span>
             <span>
               <i />
-              30 hari pendampingan
+              {copy.support}
             </span>
           </div>
         </motion.div>
@@ -239,7 +228,7 @@ export default function Hero() {
           </motion.div>
           <motion.div className="hero-live-badge" style={{ y: phoneY }}>
             <span />
-            System operational
+            {copy.operationalSystem}
             <strong>99.9%</strong>
           </motion.div>
         </div>
